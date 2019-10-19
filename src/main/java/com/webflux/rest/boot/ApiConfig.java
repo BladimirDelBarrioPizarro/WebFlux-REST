@@ -13,7 +13,7 @@ public class ApiConfig {
 
 
     @Bean
-    public PatientService patientService(PatientDao patientDao){
+    public PatientService patientService(final PatientDao patientDao){
         return new PatientServiceImpl(patientDao);
     }
 

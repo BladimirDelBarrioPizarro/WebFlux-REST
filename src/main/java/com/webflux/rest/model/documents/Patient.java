@@ -1,18 +1,14 @@
 package com.webflux.rest.model.documents;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.UUID;
 
-@Builder
-@Data
+@Setter
+@Getter
 @Document("patient")
-public class Patient {
+public class Patient{
     @Id
     private String id;
     private UUID tenantId;
@@ -38,4 +34,6 @@ public class Patient {
         this.email = email;
         this.userId = userId;
     }
+
+
 }

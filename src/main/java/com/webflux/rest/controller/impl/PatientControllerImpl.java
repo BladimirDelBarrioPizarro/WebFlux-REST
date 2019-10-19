@@ -6,9 +6,7 @@ import com.webflux.rest.service.PatientService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
-import java.util.List;
 
 public class PatientControllerImpl implements PatientController {
 

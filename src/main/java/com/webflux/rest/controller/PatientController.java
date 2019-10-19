@@ -2,21 +2,18 @@ package com.webflux.rest.controller;
 
 import com.webflux.rest.model.documents.Patient;
 
-import org.springframework.hateoas.server.ExposesResourceFor;
+
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.util.List;
 
 
-@ExposesResourceFor(Patient.class)
+
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/v1")
 public interface PatientController {
     @GetMapping(path="/patients",produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<Flux<Patient>> getPatients();

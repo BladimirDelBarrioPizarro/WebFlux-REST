@@ -5,6 +5,8 @@ import com.webflux.rest.model.documents.Patient;
 import com.webflux.rest.service.PatientService;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import java.time.Duration;
 
 
 @Slf4j
@@ -18,7 +20,8 @@ public class PatientServiceImpl  implements PatientService {
 
     @Override
     public Flux<Patient> getPatients() {
-        return patientDao.findAll().doOnNext(item -> log.info(item.getName()));
+        return patientDao.findAll().flatMap(Mono::just).delayElements(Duration.ofSeconds(3))
+                .doOnNext(item -> log.info(" -- GET /patients  name: {}",item.getName()));
 
     }
 }

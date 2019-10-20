@@ -1,7 +1,7 @@
-package com.webflux.rest;
+package com.healthelp.patient;
 
-import com.webflux.rest.dao.PatientDao;
-import com.webflux.rest.model.documents.Patient;
+import com.healthelp.patient.dao.PatientDao;
+import com.healthelp.patient.model.documents.Patient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

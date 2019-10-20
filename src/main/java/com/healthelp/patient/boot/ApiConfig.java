@@ -1,10 +1,10 @@
-package com.webflux.rest.boot;
+package com.healthelp.patient.boot;
 
-import com.webflux.rest.controller.PatientController;
-import com.webflux.rest.controller.impl.PatientControllerImpl;
-import com.webflux.rest.dao.PatientDao;
-import com.webflux.rest.service.PatientService;
-import com.webflux.rest.service.impl.PatientServiceImpl;
+import com.healthelp.patient.controller.PatientController;
+import com.healthelp.patient.controller.impl.PatientControllerImpl;
+import com.healthelp.patient.dao.PatientDao;
+import com.healthelp.patient.service.PatientService;
+import com.healthelp.patient.service.impl.PatientServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

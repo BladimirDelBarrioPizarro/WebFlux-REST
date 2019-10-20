@@ -1,4 +1,4 @@
-package com.webflux.rest;
+package com.healthelp.patient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

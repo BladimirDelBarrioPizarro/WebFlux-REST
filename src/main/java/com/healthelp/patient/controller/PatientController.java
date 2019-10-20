@@ -1,22 +1,29 @@
-package com.webflux.rest.controller;
+package com.healthelp.patient.controller;
 
-import com.webflux.rest.model.documents.Patient;
+import com.healthelp.patient.model.documents.Patient;
 
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
-
+import reactor.core.publisher.Mono;
 
 
 @RestController
 @RequestMapping("/api/v1")
 public interface PatientController {
+
     @GetMapping(path="/patients",produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<Flux<Patient>> getPatients();
+
+    @GetMapping(path="/patients/{id}",produces = {MediaType.APPLICATION_JSON_VALUE})
+    ResponseEntity<Mono<Patient>> getPatientsById(@PathVariable("id") String id);
+
+
 }
 
 
@@ -26,14 +33,6 @@ public interface PatientController {
 *
 
 
-    @ApiOperation(value = "Get patient by id", notes="Get patient request.")
-    @GetMapping(path="/api/patient/{id}")
-    @ApiImplicitParams({ @ApiImplicitParam(name = "Authorization",
-            value = "JWT Token",
-            required = true,
-            dataType = "string",
-            paramType = "header") })
-    ResponseEntity<Resource<PatientDTO>> getPatientById(@ApiParam(name="Patient id request", value="Patient id",required = true)@PathVariable("id") Integer id)throws RuntimeException;
 
 
 

@@ -1,4 +1,4 @@
-package com.webflux.rest.model.documents;
+package com.healthelp.patient.model.documents;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -7,6 +7,7 @@ import java.util.UUID;
 
 @Setter
 @Getter
+@NoArgsConstructor
 @Document("patient")
 public class Patient{
     @Id
